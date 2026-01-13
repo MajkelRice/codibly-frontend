@@ -1,14 +1,16 @@
-export enum FuelType {
+export const FuelType = {
   // Clean sources
-  BIOMASS = "biomass",
-  NUCLEAR = "nuclear",
-  HYDRO = "hydro",
-  WIND = "wind",
-  SOLAR = "solar",
+  BIOMASS: "biomass",
+  NUCLEAR: "nuclear",
+  HYDRO: "hydro",
+  WIND: "wind",
+  SOLAR: "solar",
 
   // Other sources
-  GAS = "gas",
-  COAL = "coal",
-  IMPORTS = "imports",
-  OTHER = "other",
-}
+  GAS: "gas",
+  COAL: "coal",
+  IMPORTS: "imports",
+  OTHER: "other",
+} as const;
+
+export type FuelType = (typeof FuelType)[keyof typeof FuelType];
