@@ -4,6 +4,12 @@ A modern React application designed to visualize real-time energy data and assis
 
 ## Author: Michał Ryz
 
+## Deployment
+
+App is deployed at: https://codibly-frontend-michalryz.onrender.com/
+
+***ensure the backend is running by visiting: https://codibly-backend-pljr.onrender.com/swagger-ui/index.html and wait until the app has started***
+
 ## Tech Stack
 
 * **React** + **TypeScript**
