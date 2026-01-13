@@ -1,25 +1,23 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8080";
+import { ChargingForm } from "./components/energy/ChargingForm";
+import { EnergyMixSection } from "./components/energy/EnergyMixSection";
 
 function App() {
-  const [status, setStatus] = useState<string>("Testing connection...");
-
-  useEffect(() => {
-    axios
-      .get(`${API_URL}/api/test`)
-      .then((res) => setStatus(res.data))
-      .catch((err) => setStatus("No connection:" + err));
-  }, []);
-
   return (
-    <div className="p-8 font-sans">
-      <h1>Codibly Energy App</h1>
-      <p>
-        Status backendu: <strong>{status}</strong>
-      </p>
-      <hr />
+    <div className="min-h-screen py-16 px-4">
+      <div className="max-w-7xl mx-auto space-y-16">
+        <header className="text-center space-y-4 ">
+          <h1 className="pb-4 text-5xl font-black text-transparent bg-clip-text bg-linear-to-r from-success to-primary">
+            Energy Dashboard
+          </h1>
+          <p className="text-text-muted text-lg">
+            Real-time UK Grid Intensity Monitor
+          </p>
+        </header>
+
+        <EnergyMixSection />
+
+        <ChargingForm />
+      </div>
     </div>
   );
 }
